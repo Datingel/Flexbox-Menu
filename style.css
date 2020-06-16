@@ -24,6 +24,21 @@ body {
   color: black;
 }
 
+.container button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: none !important;
+  border: none;
+  outline: none;
+  padding: 0 !important;
+  font-family: arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1.2rem;
+}
+
 .left-column {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,6 +53,18 @@ body {
   background-color: green;
   font-size: 1.4rem;
   padding-left: 1.5rem;
+}
+
+.left-column a {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.left-column a:hover {
+  background-color: lightgrey;
+}
+
+.left-column button {
+  color: white;
 }
 
 .left-column .nav {
@@ -62,10 +89,6 @@ body {
   padding-bottom: 1rem;
 }
 
-.left-column .nav .first a {
-  padding-bottom: 1rem;
-}
-
 .left-column .nav .second {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,10 +97,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-bottom: 1rem;
-}
-
-.left-column .nav .second a {
   padding-bottom: 1rem;
 }
 
@@ -139,7 +158,6 @@ body {
 
 .right-column .header .tasklist a:hover {
   color: grey;
-  border-bottom: 1px solid lightskyblue;
 }
 
 .right-column .header .tasklist a .badge {
@@ -184,6 +202,17 @@ body {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+  padding: 3rem;
+}
+
+.right-column .wrapper .main-content button {
+  color: white;
+}
+
+.right-column .wrapper .main-content button:hover {
+  color: lightcoral;
+  -webkit-transform: translate(10px, 3px);
+          transform: translate(10px, 3px);
 }
 
 .right-column .wrapper .main-content .checklist {
@@ -194,12 +223,41 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 10rem;
+}
+
+.right-column .wrapper .main-content .checklist .checkbox {
+  padding-bottom: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.right-column .wrapper .main-content .checklist .checkbox input[type="checkbox"] {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  margin-right: 1rem;
 }
 
 .right-column .wrapper .main-content .collaborators {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right-column .wrapper .main-content .collaborators .colab-circleImg {
+  background-image: url("https://images.unsplash.com/photo-1514613746154-2160d413afe5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80");
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-bottom: 1rem;
 }
 
 .right-column .wrapper .task-column {
