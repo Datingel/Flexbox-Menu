@@ -23,6 +23,30 @@ body {
 
 .right-column {
   display: flex;
+  flex-direction: column;
   flex: 4;
   background-color: blue;
+  .header {
+    display: flex;
+    width: 100%;
+    background-color: lightcoral;
+    flex: 2;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      background-color: khaki;
+      flex: 3;
+    }
+    .task-column {
+      display: flex;
+      flex-direction: column;
+      background-color: yellow;
+      flex: 1;
+    }
+  }
 }
