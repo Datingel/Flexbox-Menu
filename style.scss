@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  background-color: indigo;
+  height: 100%;
+}
+
+.left-column {
+  display: flex;
+  flex: 1;
+  background-color: green;
+}
+
+.right-column {
+  display: flex;
+  flex: 4;
+  background-color: blue;
+}
