@@ -19,6 +19,11 @@ body {
   height: 100%;
 }
 
+.container a {
+  text-decoration: none;
+  color: black;
+}
+
 .left-column {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,9 +36,11 @@ body {
       -ms-flex: 1;
           flex: 1;
   background-color: green;
+  font-size: 1.4rem;
+  padding-left: 1.5rem;
 }
 
-.left-column div.nav {
+.left-column .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,18 +48,37 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 1rem;
 }
 
-.left-column div.nav .first {
+.left-column .nav .first {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 1rem;
 }
 
-.left-column div.nav .second {
+.left-column .nav .first a {
+  padding-bottom: 1rem;
+}
+
+.left-column .nav .second {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.left-column .nav .second a {
+  padding-bottom: 1rem;
 }
 
 .right-column {
@@ -82,10 +108,55 @@ body {
           justify-content: space-between;
   width: 100%;
   background-color: lightcoral;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0.7;
+      -ms-flex: 0.7;
+          flex: 0.7;
   padding: 2rem;
+}
+
+.right-column .header h1 {
+  font-size: 4rem;
+}
+
+.right-column .header .tasklist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.right-column .header .tasklist a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.right-column .header .tasklist a:hover {
+  color: grey;
+  border-bottom: 1px solid lightskyblue;
+}
+
+.right-column .header .tasklist a .badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: row;
+      -ms-flex-pack: row;
+          justify-content: row;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 5px 10px;
+  background: skyblue;
+  color: white;
+  margin-right: 0.5rem;
+  border-radius: 70%;
+  font-size: x-small;
 }
 
 .right-column .wrapper {

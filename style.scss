@@ -12,6 +12,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .left-column {
@@ -19,14 +23,27 @@ body {
   flex-direction: column;
   flex: 1;
   background-color: green;
-  div.nav {
+  font-size: 1.4rem;
+  padding-left: 1.5rem;
+  .nav {
     display: flex;
     flex-direction: column;
+    padding-bottom: 1rem;
     .first {
       display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+      a {
+        padding-bottom: 1rem;
+      }
     }
     .second {
       display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+      a {
+        padding-bottom: 1rem;
+      }
     }
   }
 }
@@ -42,8 +59,38 @@ body {
     justify-content: space-between;
     width: 100%;
     background-color: lightcoral;
-    flex: 1;
+    flex: 0.7;
     padding: 2rem;
+    h1 {
+      font-size: 4rem;
+    }
+    .tasklist {
+      display: flex;
+      flex-direction: row;
+      a {
+        display: flex;
+        margin-right: 2rem;
+        font-size: 1.5rem;
+        text-decoration: none;
+        &:hover {
+          color: grey;
+          border-bottom: 1px solid lightskyblue;
+        }
+        &:active {
+        }
+        .badge {
+          display: flex;
+          justify-content: row;
+          align-self: center;
+          padding: 5px 10px;
+          background: skyblue;
+          color: white;
+          margin-right: 0.5rem;
+          border-radius: 70%;
+          font-size: x-small;
+        }
+      }
+    }
   }
   .wrapper {
     display: flex;
