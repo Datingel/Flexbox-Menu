@@ -11,14 +11,18 @@ body {
   flex-direction: row;
   margin: 0;
   padding: 0;
-  background-color: indigo;
   height: 100%;
 }
 
 .left-column {
   display: flex;
+  flex-direction: column;
   flex: 1;
   background-color: green;
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .right-column {
@@ -30,7 +34,7 @@ body {
     display: flex;
     width: 100%;
     background-color: lightcoral;
-    flex: 2;
+    flex: 1.5;
   }
   .wrapper {
     display: flex;
