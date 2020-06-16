@@ -33,7 +33,7 @@ body {
   background-color: green;
 }
 
-.left-column .nav {
+.left-column div.nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,6 +41,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.left-column div.nav .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.left-column div.nav .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .right-column {
@@ -61,11 +73,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   background-color: lightcoral;
-  -webkit-box-flex: 1.5;
-      -ms-flex: 1.5;
-          flex: 1.5;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 2rem;
 }
 
 .right-column .wrapper {
@@ -89,10 +109,26 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: khaki;
+  background-color: lightskyblue;
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+}
+
+.right-column .wrapper .main-content .checklist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right-column .wrapper .main-content .collaborators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .right-column .wrapper .task-column {

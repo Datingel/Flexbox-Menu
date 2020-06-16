@@ -19,9 +19,15 @@ body {
   flex-direction: column;
   flex: 1;
   background-color: green;
-  .nav {
+  div.nav {
     display: flex;
     flex-direction: column;
+    .first {
+      display: flex;
+    }
+    .second {
+      display: flex;
+    }
   }
 }
 
@@ -32,9 +38,12 @@ body {
   background-color: blue;
   .header {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     background-color: lightcoral;
-    flex: 1.5;
+    flex: 1;
+    padding: 2rem;
   }
   .wrapper {
     display: flex;
@@ -43,8 +52,15 @@ body {
     .main-content {
       display: flex;
       flex-direction: column;
-      background-color: khaki;
+      background-color: lightskyblue;
       flex: 3;
+      .checklist {
+        display: flex;
+        flex-direction: column;
+      }
+      .collaborators {
+        display: flex;
+      }
     }
     .task-column {
       display: flex;
