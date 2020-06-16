@@ -7,6 +7,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+      crossorigin="anonymous"
+    />
     <link href="style.css" rel="stylesheet" />
     <title>Flexbox Menu</title>
   </head>
@@ -24,14 +30,18 @@
           </div>
           <div class="second">
             <h2>Home</h2>
-            <a href="#">Dog</a>
-            <a href="#">Kitchen</a>
-            <a href="#">Insurance</a>
-            <a href="#">Cleaning</a>
+            <a class="project-list" href="#">Dog</a>
+            <a class="project-list" href="#">Kitchen</a>
+            <a class="project-list" href="#">Insurance</a>
+            <a class="project-list" href="#">Cleaning</a>
           </div>
         </div>
-        <button>+ Create Pipeline</button>
-        <button>+ Create new Space</button>
+        <button class="create-project">
+          <i class="fas fa-plus"></i> Create Project
+        </button>
+        <button class="create-space">
+          <i class="fas fa-plus"></i> Create new Space
+        </button>
       </div>
       <div class="right-column">
         <div class="header">
@@ -47,26 +57,28 @@
           <div class="main-content">
             <div class="checklist">
               <div class="checkbox">
-                <input type="checkbox" checked />
+                <input class="input-task" type="checkbox" checked />
                 <label>This is what you should start doing.</label>
               </div>
               <div class="checkbox">
-                <input type="checkbox" />
+                <input class="input-task" type="checkbox" />
                 <label>This is what you should do next.</label>
               </div>
               <div class="checkbox">
-                <input type="checkbox" />
+                <input class="input-task" type="checkbox" />
                 <label
                   >This is what you should do when you´ve finished the next
                   thing.</label
                 >
               </div>
-              <button>+ Add task</button>
             </div>
+            <button class="add-task">
+              <i class="fas fa-plus"></i> Add task
+            </button>
             <div class="collaborators">
               <h2>Collaborators</h2>
               <div class="colab-circleImg"></div>
-              <button>+ Add others</button>
+              <button><i class="fas fa-plus"></i> Add others</button>
             </div>
           </div>
           <div class="task-column">
@@ -84,6 +96,6 @@
         </div>
       </div>
     </div>
-    <script src="/main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
