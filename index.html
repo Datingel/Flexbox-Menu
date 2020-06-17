@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="left-column">
+      <div class="sidebar">
         <div class="nav">
           <div class="first">
             <h2>Work</h2>
@@ -47,38 +47,40 @@
         <div class="header">
           <h1>Flexbox</h1>
           <div class="tasklist">
-            <a href="#"><span class="badge">10</span>Todos</a>
+            <a class="active" href="#"><span class="badge">10</span>Todos</a>
             <a href="#"><span class="badge">3</span>Notes</a>
             <a href="#">Links</a>
             <a href="#">Files</a>
           </div>
         </div>
         <div class="wrapper">
-          <div class="main-content">
-            <div class="checklist">
-              <div class="checkbox">
-                <input class="input-task" type="checkbox" checked />
-                <label>This is what you should start doing.</label>
+          <div class="wrapper-content">
+            <div class="main-content">
+              <div class="checklist">
+                <div class="checkbox">
+                  <input class="input-task" type="checkbox" checked />
+                  <label>This is what you should start doing.</label>
+                </div>
+                <div class="checkbox">
+                  <input class="input-task" type="checkbox" />
+                  <label>This is what you should do next.</label>
+                </div>
+                <div class="checkbox">
+                  <input class="input-task" type="checkbox" />
+                  <label
+                    >This is what you should do when you´ve finished the next
+                    thing.</label
+                  >
+                </div>
               </div>
-              <div class="checkbox">
-                <input class="input-task" type="checkbox" />
-                <label>This is what you should do next.</label>
+              <button class="add-task">
+                <i class="fas fa-plus"></i> Add task
+              </button>
+              <div class="collaborators">
+                <h2>Collaborators</h2>
+                <div class="colab-circleImg"></div>
+                <button><i class="fas fa-plus"></i> Add others</button>
               </div>
-              <div class="checkbox">
-                <input class="input-task" type="checkbox" />
-                <label
-                  >This is what you should do when you´ve finished the next
-                  thing.</label
-                >
-              </div>
-            </div>
-            <button class="add-task">
-              <i class="fas fa-plus"></i> Add task
-            </button>
-            <div class="collaborators">
-              <h2>Collaborators</h2>
-              <div class="colab-circleImg"></div>
-              <button><i class="fas fa-plus"></i> Add others</button>
             </div>
           </div>
           <div class="task-column">
