@@ -5,18 +5,19 @@ const addTaskBtn = document.querySelector(".add-task");
 const checklist = document.querySelector(".checklist");
 const addCollabBtn = document.querySelector(".add-collab");
 const collabList = document.querySelector(".collab-container");
-let counterTaskbar = document.querySelector(".counter");
-console.log(counterTaskbar.innerText);
-const inputCheckbox = document.querySelector(".input-task");
-const inputCheckboxChecked =
-  document.querySelector(".input-task:checked") !== null;
 const sidebarToggleBtn = document.querySelector(".toggle-btn");
+const checkboxes = document.querySelectorAll(".input-task");
+let checkboxCounter = document.getElementById("counter");
 
 //Event Listeners
 createProjectBtn.addEventListener("click", addProject);
 addTaskBtn.addEventListener("click", addTask);
 addCollabBtn.addEventListener("click", addCollab);
-inputCheckbox.addEventListener("click", taskDone);
+for (const checkbox of checkboxes) {
+  checkbox.addEventListener("change", function () {
+    countCheckedCheckbox();
+  });
+}
 sidebarToggleBtn.addEventListener("click", toggleSidebar);
 
 //Functions
@@ -54,11 +55,14 @@ function addCollab() {
   collabList.appendChild(newCollabImgDiv);
 }
 
-function taskDone() {
-  let counter = counterTaskbar.innerText;
-  counter = 0;
-  if (inputCheckboxChecked) {
+function countCheckedCheckbox() {
+  let counter = 0;
+  for (const checkbox of checkboxes) {
+    if (checkbox.checked) {
+      counter++;
+    }
   }
+  checkboxCounter.innerText = counter;
 }
 
 let isClosed = false;
@@ -68,26 +72,18 @@ function toggleSidebar() {
   const sideBarToggleBtn = document.querySelector(".hamburger");
   const openSidebar = () => {
     sidebar.style.display = "flex";
+    sidebarToggleBtn.classList.add("is-active");
   };
   const closeSidebar = () => {
     sidebar.style.display = "none";
-  };
-
-  const changeActiveStateOff = () => {
     sidebarToggleBtn.classList.remove("is-active");
-  };
-
-  const changeActiveStateOn = () => {
-    sidebarToggleBtn.classList.add("is-active");
   };
 
   if (isClosed) {
     openSidebar();
     isClosed = false;
-    changeActiveStateOff();
   } else {
     closeSidebar();
     isClosed = true;
-    changeActiveStateOn();
   }
 }

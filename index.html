@@ -14,6 +14,10 @@
       crossorigin="anonymous"
     />
     <link href="dist/hamburgers.css" rel="stylesheet" type="text/html" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
     <link href="style.css" rel="stylesheet" />
     <title>Flexbox Menu</title>
   </head>
@@ -49,7 +53,7 @@
       <div class="right-column">
         <div class="header">
           <button
-            class="hamburger hamburger--arrowturn toggle-btn"
+            class="hamburger hamburger--arrowturn is-active toggle-btn"
             type="button"
           >
             <span class="hamburger-box">
@@ -66,22 +70,35 @@
         </div>
         <div class="wrapper">
           <div class="wrapper-content">
-            <div class="main-content">
+            <div div class="main-content">
               <div class="checklist">
                 <div class="checkbox">
-                  <input class="input-task" type="checkbox" checked />
-                  <label>This is what you should start doing.</label>
+                  <input
+                    class="input-task"
+                    id="task"
+                    name="task"
+                    type="checkbox"
+                  /><label>This is what you should start doing.</label>
                 </div>
                 <div class="checkbox">
-                  <input class="input-task" type="checkbox" />
+                  <input
+                    class="input-task"
+                    id="task"
+                    name="task"
+                    type="checkbox"
+                  /><label>
+                    This is what you should do when you´ve finished the next
+                    thing.
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input
+                    class="input-task"
+                    id="task"
+                    name="task"
+                    type="checkbox"
+                  />
                   <label>This is what you should do next.</label>
-                </div>
-                <div class="checkbox">
-                  <input class="input-task" type="checkbox" />
-                  <label
-                    >This is what you should do when you´ve finished the next
-                    thing.</label
-                  >
                 </div>
               </div>
               <button class="add-task">
@@ -102,7 +119,7 @@
             <div class="task-column">
               <div class="calendar">
                 <p>Tasks done</p>
-                <p class="counter">0</p>
+                <p id="counter">0</p>
                 <p>Good job it´s something</p>
                 <div class="calendar"></div>
               </div>
