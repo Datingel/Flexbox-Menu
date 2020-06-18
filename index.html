@@ -18,30 +18,32 @@
   </head>
   <body>
     <div class="container">
-      <div class="sidebar">
-        <div class="nav">
-          <div class="first">
-            <h2>Work</h2>
-            <a href="#">Flexbox</a>
-            <a href="#">React</a>
-            <a href="#">Google Adworks</a>
-            <a href="#">Advertorial</a>
-            <a href="#">Instagram</a>
+      <div class="wrapper-sidebar">
+        <div class="sidebar">
+          <div class="nav">
+            <div class="first">
+              <h2>Work</h2>
+              <a href="#">Flexbox</a>
+              <a href="#">React</a>
+              <a href="#">Google Adworks</a>
+              <a href="#">Advertorial</a>
+              <a href="#">Instagram</a>
+            </div>
+            <div class="second">
+              <h2>Home</h2>
+              <a class="project-list" href="#">Dog</a>
+              <a class="project-list" href="#">Kitchen</a>
+              <a class="project-list" href="#">Insurance</a>
+              <a class="project-list" href="#">Cleaning</a>
+            </div>
           </div>
-          <div class="second">
-            <h2>Home</h2>
-            <a class="project-list" href="#">Dog</a>
-            <a class="project-list" href="#">Kitchen</a>
-            <a class="project-list" href="#">Insurance</a>
-            <a class="project-list" href="#">Cleaning</a>
-          </div>
+          <button class="create-project">
+            <i class="fas fa-plus"></i> Create Project
+          </button>
+          <button class="create-space">
+            <i class="fas fa-plus"></i> Create new Space
+          </button>
         </div>
-        <button class="create-project">
-          <i class="fas fa-plus"></i> Create Project
-        </button>
-        <button class="create-space">
-          <i class="fas fa-plus"></i> Create new Space
-        </button>
       </div>
       <div class="right-column">
         <div class="header">
@@ -78,21 +80,27 @@
               </button>
               <div class="collaborators">
                 <h2>Collaborators</h2>
-                <div class="colab-circleImg"></div>
-                <button><i class="fas fa-plus"></i> Add others</button>
+                <div class="collab-container">
+                  <div class="collab-circleImg"></div>
+                </div>
+                <button class="add-collab">
+                  <i class="fas fa-plus"></i> Add others
+                </button>
               </div>
             </div>
           </div>
-          <div class="task-column">
-            <div class="calendar">
-              <p>Tasks done</p>
-              <p class="counter">1</p>
-              <p>Good job it´s something</p>
-              <div class="calendar"></div>
-            </div>
-            <div class="footer">
-              <p>Project created</p>
-              <p>11 Mar 2017</p>
+          <div class="wrapper-taskbar">
+            <div class="task-column">
+              <div class="calendar">
+                <p>Tasks done</p>
+                <p class="counter">0</p>
+                <p>Good job it´s something</p>
+                <div class="calendar"></div>
+              </div>
+              <div class="footer">
+                <p>Project created</p>
+                <p>11 Mar 2017</p>
+              </div>
             </div>
           </div>
         </div>

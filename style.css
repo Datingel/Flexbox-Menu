@@ -39,7 +39,6 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
-  overflow: hidden;
   font-size: 1.2rem;
 }
 
@@ -47,7 +46,14 @@ body {
   margin-right: 0.7rem;
 }
 
-.sidebar {
+.wrapper-sidebar {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  height: 100%;
+}
+
+.wrapper-sidebar .sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,29 +61,26 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 0.3;
-      -ms-flex: 0.3 0 auto;
-          flex: 0.3 0 auto;
   background-color: lightseagreen;
   font-size: 1.4rem;
-  padding-left: 1.5rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
   height: 100%;
   overflow: auto;
 }
 
-.sidebar a {
+.wrapper-sidebar .sidebar a {
   padding: 0.5rem 0 0.5rem 0;
 }
 
-.sidebar a:hover {
+.wrapper-sidebar .sidebar a:hover {
   background-color: lightgrey;
 }
 
-.sidebar button {
+.wrapper-sidebar .sidebar button {
   color: white;
 }
 
-.sidebar .nav {
+.wrapper-sidebar .sidebar .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,7 +91,7 @@ body {
   padding-bottom: 1rem;
 }
 
-.sidebar .nav .first {
+.wrapper-sidebar .sidebar .nav .first {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,7 +102,7 @@ body {
   padding-bottom: 1rem;
 }
 
-.sidebar .nav .second {
+.wrapper-sidebar .sidebar .nav .second {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,6 +206,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+  height: 100%;
 }
 
 .right-column .wrapper .wrapper-content .main-content {
@@ -211,14 +215,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   background-color: lightskyblue;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  padding: 3rem;
   height: 100%;
+  padding: 3rem;
 }
 
 .right-column .wrapper .wrapper-content .main-content button {
@@ -251,6 +252,10 @@ body {
   margin-right: 1rem;
 }
 
+.right-column .wrapper .wrapper-content .main-content .checklist .checkbox input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
 .right-column .wrapper .wrapper-content .main-content .add-task {
   margin-bottom: 8rem;
 }
@@ -265,7 +270,7 @@ body {
           flex-direction: column;
 }
 
-.right-column .wrapper .wrapper-content .main-content .collaborators .colab-circleImg {
+.right-column .wrapper .wrapper-content .main-content .collaborators .collab-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,22 +278,51 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+.right-column .wrapper .wrapper-content .main-content .collaborators .collab-container .collab-circleImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-image: url("https://images.unsplash.com/photo-1514613746154-2160d413afe5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80");
   border-radius: 50%;
   width: 50px;
   height: 50px;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-bottom: 1rem;
 }
 
-.right-column .wrapper .task-column {
+.right-column .wrapper .wrapper-content .main-content .collaborators .collab-container .collab-circleImg:not(:first-child) {
+  margin-left: -2rem;
+}
+
+.right-column .wrapper .wrapper-taskbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
+.right-column .wrapper .wrapper-taskbar .task-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -296,13 +330,12 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 100%;
   background-color: yellow;
-  -webkit-box-flex: 0.3;
-      -ms-flex: 0.3 0 auto;
-          flex: 0.3 0 auto;
+  overflow: auto;
 }
 
-.right-column .wrapper .task-column .calendar {
+.right-column .wrapper .wrapper-taskbar .task-column .calendar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,20 +343,19 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 1rem 0 1rem;
 }
 
-.right-column .wrapper .task-column .calendar p:first-child {
+.right-column .wrapper .wrapper-taskbar .task-column .calendar p:first-child {
   font-size: 1.5rem;
 }
 
-.right-column .wrapper .task-column .calendar p:nth-child(2) {
+.right-column .wrapper .wrapper-taskbar .task-column .calendar p:nth-child(2) {
   color: blue;
   font-size: 4rem;
   margin: 0;
 }
 
-.right-column .wrapper .task-column .footer {
+.right-column .wrapper .wrapper-taskbar .task-column .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,17 +364,15 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   border-top: 1px solid lightgray;
   background-color: lightgrey;
   -webkit-box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.3);
           box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 100;
 }
 
-.right-column .wrapper .task-column .footer p:last-child {
+.right-column .wrapper .wrapper-taskbar .task-column .footer p:last-child {
   font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
