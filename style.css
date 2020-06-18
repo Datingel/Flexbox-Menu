@@ -66,6 +66,8 @@ body {
   padding: 1.5rem 1.5rem 0 1.5rem;
   height: 100%;
   overflow: auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .wrapper-sidebar .sidebar a {
@@ -144,6 +146,10 @@ body {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   padding: 2rem;
+}
+
+.right-column .header .toggle-btn {
+  font-size: 2rem;
 }
 
 .right-column .header h1 {

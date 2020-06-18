@@ -6,7 +6,10 @@ const checklist = document.querySelector(".checklist");
 const addCollabBtn = document.querySelector(".add-collab");
 const collabList = document.querySelector(".collab-container");
 let counterTaskbar = document.querySelector(".counter");
+console.log(counterTaskbar.innerText);
 const inputCheckbox = document.querySelector(".input-task");
+const inputCheckboxChecked =
+  document.querySelector(".input-task:checked") !== null;
 
 //Event Listeners
 createProjectBtn.addEventListener("click", addProject);
@@ -37,19 +40,41 @@ function addTask() {
 }
 
 function addCollab() {
-  console.log("clicked");
   const newCollabDiv = document.createElement("div");
   newCollabDiv.classList.add("collab-container");
 
   const newCollabImgDiv = document.createElement("div");
   newCollabImgDiv.classList.add("collab-circleImg");
   newCollabImgDiv.style.backgroundImage =
-    "url('https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80')";
+    "url('https://images.unsplash.com/photo-1474447976065-67d23accb1e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=932&q=80')";
   newCollabDiv.appendChild(newCollabImgDiv);
 
   collabList.appendChild(newCollabImgDiv);
 }
 
 function taskDone() {
-  console.log(counterTaskbar);
+  let counter = counterTaskbar.innerText;
+  counter = 0;
+  if (inputCheckboxChecked) {
+  }
 }
+
+let isClosed = false;
+
+const toggleSidebar = () => {
+  const sidebar = document.querySelector(".sidebar");
+  const openSidebar = () => {
+    sidebar.style.display = "flex";
+  };
+  const closeSidebar = () => {
+    sidebar.style.display = "none";
+  };
+
+  if (isClosed) {
+    openSidebar();
+    isClosed = false;
+  } else {
+    closeSidebar();
+    isClosed = true;
+  }
+};
