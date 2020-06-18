@@ -13,6 +13,7 @@
       integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
       crossorigin="anonymous"
     />
+    <link href="dist/hamburgers.css" rel="stylesheet" type="text/html" />
     <link href="style.css" rel="stylesheet" />
     <title>Flexbox Menu</title>
   </head>
@@ -47,9 +48,14 @@
       </div>
       <div class="right-column">
         <div class="header">
-          <a class="toggle-btn" onclick="toggleSidebar()" href="#"
-            ><i class="collapse fa fa-bars"></i
-          ></a>
+          <button
+            class="hamburger hamburger--arrowturn toggle-btn"
+            type="button"
+          >
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
           <h1>Flexbox</h1>
           <div class="tasklist">
             <a class="active" href="#"><span class="badge">10</span>Todos</a>

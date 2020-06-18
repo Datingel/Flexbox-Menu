@@ -1,3 +1,5 @@
+@import "./node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
 html,
 body {
   height: 100%;
@@ -45,7 +47,7 @@ body {
     padding: 1.5rem 1.5rem 0 1.5rem;
     height: 100%;
     overflow: auto;
-    transition: all 0.5s ease;
+
     a {
       padding: 0.5rem 0 0.5rem 0;
       &:hover {
@@ -86,8 +88,15 @@ body {
     background-color: lightcoral;
     flex: 0 0 auto;
     padding: 2rem;
+    a {
+      overflow: hidden;
+      .collapse {
+        pointer-events: none;
+      }
+    }
     .toggle-btn {
       font-size: 2rem;
+      width: fit-content;
     }
     h1 {
       font-size: 4rem;
@@ -188,7 +197,7 @@ body {
       min-width: min-content;
       .task-column {
         display: flex;
-        padding-left: 1rem;
+
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
@@ -197,7 +206,7 @@ body {
         .calendar {
           display: flex;
           flex-direction: column;
-
+          padding-left: 1rem;
           p:first-child {
             font-size: 1.5rem;
           }

@@ -10,12 +10,14 @@ console.log(counterTaskbar.innerText);
 const inputCheckbox = document.querySelector(".input-task");
 const inputCheckboxChecked =
   document.querySelector(".input-task:checked") !== null;
+const sidebarToggleBtn = document.querySelector(".toggle-btn");
 
 //Event Listeners
 createProjectBtn.addEventListener("click", addProject);
 addTaskBtn.addEventListener("click", addTask);
 addCollabBtn.addEventListener("click", addCollab);
 inputCheckbox.addEventListener("click", taskDone);
+sidebarToggleBtn.addEventListener("click", toggleSidebar);
 
 //Functions
 function addProject(event) {
@@ -61,8 +63,9 @@ function taskDone() {
 
 let isClosed = false;
 
-const toggleSidebar = () => {
+function toggleSidebar() {
   const sidebar = document.querySelector(".sidebar");
+  const sideBarToggleBtn = document.querySelector(".hamburger");
   const openSidebar = () => {
     sidebar.style.display = "flex";
   };
@@ -70,11 +73,21 @@ const toggleSidebar = () => {
     sidebar.style.display = "none";
   };
 
+  const changeActiveStateOff = () => {
+    sidebarToggleBtn.classList.remove("is-active");
+  };
+
+  const changeActiveStateOn = () => {
+    sidebarToggleBtn.classList.add("is-active");
+  };
+
   if (isClosed) {
     openSidebar();
     isClosed = false;
+    changeActiveStateOff();
   } else {
     closeSidebar();
     isClosed = true;
+    changeActiveStateOn();
   }
-};
+}
