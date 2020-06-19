@@ -7,6 +7,7 @@ const addCollabBtn = document.querySelector(".add-collab");
 const collabList = document.querySelector(".collab-container");
 const sidebarToggleBtn = document.querySelector(".toggle-btn");
 const checkboxes = document.querySelectorAll(".input-task");
+const checkboxElements = document.querySelectorAll(".checkbox");
 let checkboxCounter = document.getElementById("counter");
 const newTaskInput = document.getElementById("new-task");
 const trashBtns = document.querySelectorAll(".trash-btn");
@@ -17,7 +18,15 @@ createProjectBtn.addEventListener("click", addProject);
 addTaskBtn.addEventListener("click", addTask);
 addCollabBtn.addEventListener("click", addCollab);
 for (const trashBtn of trashBtns) {
-  trashBtn.addEventListener("click", deleteTask);
+  for (const checkboxElement of checkboxElements) {
+    trashBtn.addEventListener("click", (e) => {
+      const item = e.target;
+      const todo = item.parentElement;
+      const todoParent = todo.parentElement;
+      checkboxElement.classList.add("fall");
+      // todoParent.remove();
+    });
+  }
   trashBtn.addEventListener("mouseenter", (e) => {
     trashBtn.classList.add("animate__animated", "animate__tada");
   });
@@ -42,6 +51,10 @@ function addTask(e) {
   const newTaskDiv = document.createElement("div");
   newTaskDiv.classList.add("checkbox");
 
+  const newTrashBtn = document.createElement("button");
+  newTrashBtn.innerHTML = '<i class="fas fa-trash"></i>';
+  newTaskDiv.appendChild(newTrashBtn);
+
   const newCheckbox = document.createElement("input");
   newCheckbox.classList.add("input-task");
   newCheckbox.setAttribute("type", "checkbox");
@@ -50,10 +63,6 @@ function addTask(e) {
   const newLabel = document.createElement("label");
   newLabel.innerText = newTaskInput.value;
   newTaskDiv.appendChild(newLabel);
-
-  const newTrashBtn = document.createElement("button");
-  newTrashBtn.innerHTML = '<i class="fas fa-trash"></i>';
-  newTaskDiv.appendChild(newTrashBtn);
 
   if (newTaskInput.value.length < 1) {
     alert("This field can´t be empty, please fill something in!");
@@ -107,9 +116,4 @@ function toggleSidebar() {
     closeSidebar();
     isClosed = true;
   }
-}
-
-function deleteTask(e) {
-  const item = e.target;
-  console.log(item);
 }

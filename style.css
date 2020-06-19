@@ -1635,6 +1635,12 @@ body {
   text-decoration: line-through;
 }
 
+.right-column .wrapper .wrapper-content .main-content .checklist .checkbox .fall {
+  -webkit-transform: translateY(8rem) rotateZ(20deg);
+          transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
 .right-column .wrapper .wrapper-content .main-content .checklist label {
   padding-right: 1rem;
 }

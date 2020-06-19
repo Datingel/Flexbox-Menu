@@ -152,6 +152,7 @@ body {
           display: flex;
           flex-direction: column;
           margin-bottom: 1rem;
+
           .checkbox {
             display: flex;
             flex-flow: row wrap;
@@ -165,6 +166,10 @@ body {
             }
             input[type="checkbox"]:checked + .task-label {
               text-decoration: line-through;
+            }
+            .fall {
+              transform: translateY(8rem) rotateZ(20deg);
+              opacity: 0;
             }
           }
           label {
