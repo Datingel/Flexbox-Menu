@@ -73,37 +73,54 @@
             <div div class="main-content">
               <div class="checklist">
                 <div class="checkbox">
-                  <input
-                    class="input-task"
-                    id="task"
-                    name="task"
-                    type="checkbox"
-                  /><label>This is what you should start doing.</label>
-                </div>
-                <div class="checkbox">
-                  <input
-                    class="input-task"
-                    id="task"
-                    name="task"
-                    type="checkbox"
-                  /><label>
-                    This is what you should do when you´ve finished the next
-                    thing.
-                  </label>
-                </div>
-                <div class="checkbox">
+                  <button class="trash-btn">
+                    <i class="fas fa-trash"></i>
+                  </button>
                   <input
                     class="input-task"
                     id="task"
                     name="task"
                     type="checkbox"
                   />
-                  <label>This is what you should do next.</label>
+                  <label class="task-label"
+                    >This is what you should start doing</label
+                  >
+                </div>
+                <div class="checkbox">
+                  <button class="trash-btn">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <input
+                    class="input-task"
+                    id="task"
+                    name="task"
+                    type="checkbox"
+                  />
+                  <label class="task-label"
+                    >This is what you should start doing</label
+                  >
+                </div>
+                <div class="checkbox">
+                  <button class="trash-btn">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <input
+                    class="input-task"
+                    id="task"
+                    name="task"
+                    type="checkbox"
+                  />
+                  <label class="task-label"
+                    >This is what you should start doing</label
+                  >
                 </div>
               </div>
-              <button class="add-task">
-                <i class="fas fa-plus"></i> Add task
-              </button>
+              <div class="input-value">
+                <input type="text" id="new-task" />
+                <button class="add-task">
+                  <i class="fas fa-plus"></i> Add task
+                </button>
+              </div>
               <div class="collaborators">
                 <h2>Collaborators</h2>
                 <div class="collab-container">

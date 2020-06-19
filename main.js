@@ -8,16 +8,29 @@ const collabList = document.querySelector(".collab-container");
 const sidebarToggleBtn = document.querySelector(".toggle-btn");
 const checkboxes = document.querySelectorAll(".input-task");
 let checkboxCounter = document.getElementById("counter");
+const newTaskInput = document.getElementById("new-task");
+const trashBtns = document.querySelectorAll(".trash-btn");
+const checkbox = document.querySelector(".checkbox");
 
 //Event Listeners
 createProjectBtn.addEventListener("click", addProject);
 addTaskBtn.addEventListener("click", addTask);
 addCollabBtn.addEventListener("click", addCollab);
+for (const trashBtn of trashBtns) {
+  trashBtn.addEventListener("click", deleteTask);
+  trashBtn.addEventListener("mouseenter", (e) => {
+    trashBtn.classList.add("animate__animated", "animate__tada");
+  });
+  trashBtn.addEventListener("mouseleave", (e) => {
+    trashBtn.classList.remove("animate__animated", "animate__tada");
+  });
+}
 for (const checkbox of checkboxes) {
   checkbox.addEventListener("change", function () {
     countCheckedCheckbox();
   });
 }
+
 sidebarToggleBtn.addEventListener("click", toggleSidebar);
 
 //Functions
@@ -25,8 +38,7 @@ function addProject(event) {
   console.log("Create Project");
 }
 
-function addTask() {
-  console.log("clicked");
+function addTask(e) {
   const newTaskDiv = document.createElement("div");
   newTaskDiv.classList.add("checkbox");
 
@@ -36,10 +48,19 @@ function addTask() {
   newTaskDiv.appendChild(newCheckbox);
 
   const newLabel = document.createElement("label");
-  newLabel.innerText = "Test";
+  newLabel.innerText = newTaskInput.value;
   newTaskDiv.appendChild(newLabel);
 
-  checklist.appendChild(newTaskDiv);
+  const newTrashBtn = document.createElement("button");
+  newTrashBtn.innerHTML = '<i class="fas fa-trash"></i>';
+  newTaskDiv.appendChild(newTrashBtn);
+
+  if (newTaskInput.value.length < 1) {
+    alert("This field can´t be empty, please fill something in!");
+  } else {
+    checklist.appendChild(newTaskDiv);
+    newTaskInput.value = "";
+  }
 }
 
 function addCollab() {
@@ -86,4 +107,9 @@ function toggleSidebar() {
     closeSidebar();
     isClosed = true;
   }
+}
+
+function deleteTask(e) {
+  const item = e.target;
+  console.log(item);
 }
