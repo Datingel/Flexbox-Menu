@@ -241,13 +241,17 @@ body {
     }
     .wrapper-taskbar {
       display: flex;
-      flex-direction: column;
-      flex: 1 0 auto;
-      max-width: 500px;
-      min-width: 300px;
+      @media (min-width: 880px) {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        max-width: 500px;
+        min-width: 300px;
+      }
       .task-column {
         display: flex;
         flex-direction: column;
+        flex: 1 0 auto;
         justify-content: space-between;
         height: 100%;
         background-color: yellow;
