@@ -137,20 +137,24 @@ body {
   .wrapper {
     display: flex;
     flex-direction: column;
+    overflow: auto;
     @media (min-width: 880px) {
       display: flex;
       flex-direction: row;
       flex: 1 0 auto;
-      overflow: scroll;
     }
     .wrapper-content {
       display: flex;
       overflow: auto;
       flex: 1 0 auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       .main-content {
         display: flex;
         flex-flow: column wrap;
         background-color: lightskyblue;
+        min-height: 100%;
         padding: 3rem;
         flex: 1 0 auto;
         button {
@@ -241,12 +245,14 @@ body {
     }
     .wrapper-taskbar {
       display: flex;
+      min-height: min-content;
       @media (min-width: 880px) {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
         max-width: 500px;
         min-width: 300px;
+        min-height: min-content;
       }
       .task-column {
         display: flex;
@@ -255,7 +261,7 @@ body {
         justify-content: space-between;
         height: 100%;
         background-color: yellow;
-        overflow: auto;
+        min-height: min-content;
         .calendar {
           display: flex;
           align-items: center;
