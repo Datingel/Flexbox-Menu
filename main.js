@@ -12,19 +12,20 @@ let checkboxCounter = document.getElementById("counter");
 const newTaskInput = document.getElementById("new-task");
 const trashBtns = document.querySelectorAll(".trash-btn");
 const checkbox = document.querySelector(".checkbox");
+const filterOption = document.querySelector(".filter-todo");
 
 //Event Listeners
 createProjectBtn.addEventListener("click", addProject);
 addTaskBtn.addEventListener("click", addTask);
 addCollabBtn.addEventListener("click", addCollab);
+filterOption.addEventListener("click", filterTodo);
 for (const trashBtn of trashBtns) {
   for (const checkboxElement of checkboxElements) {
     trashBtn.addEventListener("click", (e) => {
       const item = e.target;
       const todo = item.parentElement;
       const todoParent = todo.parentElement;
-      checkboxElement.classList.add("fall");
-      // todoParent.remove();
+      todoParent.remove();
     });
   }
   trashBtn.addEventListener("mouseenter", (e) => {
@@ -116,4 +117,9 @@ function toggleSidebar() {
     closeSidebar();
     isClosed = true;
   }
+}
+
+function filterTodo(e) {
+  const todos = checkbox.childNodes;
+  console.log(todos);
 }

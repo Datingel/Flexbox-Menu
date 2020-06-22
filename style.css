@@ -1608,6 +1608,35 @@ body {
   margin-bottom: 1rem;
 }
 
+.right-column .wrapper .wrapper-content .main-content .checklist select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.right-column .wrapper .wrapper-content .main-content .checklist .select {
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.right-column .wrapper .wrapper-content .main-content .checklist select {
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.right-column .wrapper .wrapper-content .main-content .checklist .select::after {
+  content: "\25BC";
+  position: absolute;
+  background: white;
+  top: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+
 .right-column .wrapper .wrapper-content .main-content .checklist .checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
