@@ -1806,11 +1806,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
   background-color: yellow;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .right-column .wrapper .wrapper-taskbar .task-column .calendar {
@@ -1846,6 +1842,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border-top: 1px solid lightgray;
