@@ -12,19 +12,20 @@ let checkboxCounter = document.getElementById("counter");
 const newTaskInput = document.getElementById("new-task");
 const trashBtns = document.querySelectorAll(".trash-btn");
 const checkbox = document.querySelector(".checkbox");
-const filterOption = document.querySelector(".filter-todo");
 
 //Event Listeners
+// document.addEventListener("DOMContentLoaded", getTodos);
 createProjectBtn.addEventListener("click", addProject);
-addTaskBtn.addEventListener("click", addTask);
+addTaskBtn.addEventListener("click", addTodo);
 addCollabBtn.addEventListener("click", addCollab);
-filterOption.addEventListener("click", filterTodo);
+
 for (const trashBtn of trashBtns) {
   for (const checkboxElement of checkboxElements) {
     trashBtn.addEventListener("click", (e) => {
       const item = e.target;
       const todo = item.parentElement;
       const todoParent = todo.parentElement;
+      // removeLocalTodos(todoParent);
       todoParent.remove();
     });
   }
@@ -48,7 +49,7 @@ function addProject(event) {
   console.log("Create Project");
 }
 
-function addTask(e) {
+function addTodo(e) {
   const newTaskDiv = document.createElement("div");
   newTaskDiv.classList.add("checkbox");
 
@@ -64,6 +65,8 @@ function addTask(e) {
   const newLabel = document.createElement("label");
   newLabel.innerText = newTaskInput.value;
   newTaskDiv.appendChild(newLabel);
+
+  // saveLocalTodos(newTaskInput.value);
 
   if (newTaskInput.value.length < 1) {
     alert("This field can´t be empty, please fill something in!");
@@ -119,7 +122,54 @@ function toggleSidebar() {
   }
 }
 
-function filterTodo(e) {
-  const todos = checkbox.childNodes;
-  console.log(todos);
-}
+// function saveLocalTodos(todo) {
+//   let todos;
+//   if (localStorage.getItem("todos") === null) {
+//     todos = [];
+//   } else {
+//     todos = JSON.parse(localStorage.getItem("todos"));
+//   }
+//   todos.push(todo);
+//   localStorage.setItem("todos", JSON.stringify(todos));
+// }
+
+// function getTodos() {
+//   let todos;
+//   if (localStorage.getItem("todos") === null) {
+//     todos = [];
+//   } else {
+//     todos = JSON.parse(localStorage.getItem("todos"));
+//   }
+//   todos.forEach(function (todo) {
+//     const newTaskDiv = document.createElement("div");
+//     newTaskDiv.classList.add("checkbox");
+
+//     const newTrashBtn = document.createElement("button");
+//     newTrashBtn.innerHTML = '<i class="fas fa-trash"></i>';
+//     newTaskDiv.appendChild(newTrashBtn);
+
+//     const newCheckbox = document.createElement("input");
+//     newCheckbox.classList.add("input-task");
+//     newCheckbox.setAttribute("type", "checkbox");
+//     newTaskDiv.appendChild(newCheckbox);
+
+//     const newLabel = document.createElement("label");
+//     newLabel.innerText = todo;
+//     newTaskDiv.appendChild(newLabel);
+
+//     checklist.appendChild(newTaskDiv);
+//     newTaskInput.value = "";
+//   });
+// }
+
+// function removeLocalTodos(todoParent) {
+//   let todos;
+//   if (localStorage.getItem("todos") === null) {
+//     todos = [];
+//   } else {
+//     todos = JSON.parse(localStorage.getItem("todos"));
+//   }
+//   const todoIndex = todoParent.children[0].innerText;
+//   todos.splice(todos.indexOf(todoIndex), 1);
+//   localStorage.setItem("todos", JSON.stringify(todos));
+// }

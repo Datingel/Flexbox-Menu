@@ -1563,15 +1563,19 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .right-column .wrapper .wrapper-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow: auto;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  height: 100%;
 }
 
 .right-column .wrapper .wrapper-content .main-content {
@@ -1583,8 +1587,10 @@ body {
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
   background-color: lightskyblue;
-  height: 100%;
   padding: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .right-column .wrapper .wrapper-content .main-content button {
