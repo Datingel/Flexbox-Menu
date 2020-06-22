@@ -14,7 +14,7 @@ const trashBtns = document.querySelectorAll(".trash-btn");
 const checkbox = document.querySelector(".checkbox");
 
 //Event Listeners
-// document.addEventListener("DOMContentLoaded", getTodos);
+
 createProjectBtn.addEventListener("click", addProject);
 addTaskBtn.addEventListener("click", addTodo);
 addCollabBtn.addEventListener("click", addCollab);
